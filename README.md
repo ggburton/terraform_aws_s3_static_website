@@ -2,7 +2,7 @@
 
 This is a short deployment showing how to setup S3 to serve a static website and assign it to a Route53 DNS name.
 
-todo
+TODO:
 
 - [ ] Add Cloudfront
 - [ ] Secure with HTTPS 
