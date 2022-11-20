@@ -1,8 +1,18 @@
 resource "aws_s3_bucket" "website_bucket" {
-  bucket = var.fqdn
+  bucket = local.fqdn
 
   tags = {
     Name = "serverless-website-bucket"
+    app  = "serverless-website"
+  }
+}
+
+# TODO need to enable acls for logs into bucket
+resource "aws_s3_bucket" "website_logs_bucket" {
+  bucket = "logs-${local.fqdn}"
+
+  tags = {
+    Name = "serverless-website-bucket-logs"
     app  = "serverless-website"
   }
 }
